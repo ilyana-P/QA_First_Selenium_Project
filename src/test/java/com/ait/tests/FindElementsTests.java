@@ -45,11 +45,11 @@ public class FindElementsTests {
         System.out.println(label.getText());
 
 
-
         //
     }
+
     @Test
-    public void FindElementById(){
+    public void findElementById() {
         WebElement city = driver.findElement(By.id("city"));
         System.out.println(city.getDomAttribute("id"));
 
@@ -62,8 +62,9 @@ public class FindElementsTests {
     public void tearDown() {
         driver.quit();
     }
+
     @Test
-    public void FindByClassName(){
+    public void findByClassName() {
         WebElement telephone = driver.findElement(By.className("telephone"));
         System.out.println(telephone.getText());
 
