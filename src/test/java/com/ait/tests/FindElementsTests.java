@@ -74,5 +74,92 @@ public class FindElementsTests {
 
     }
 
+    @Test
+    public void findElementByLinkText() {
+        WebElement linkText = driver.findElement(By.linkText("Let car work"));
+        System.out.println(linkText.getText());
 
+        // WebElement linkText2 = driver.findElement(By.linkText("Los Angeles"));
+        //System.out.println(linkText2.getText());
+
+    }
+
+    @Test
+    public void findElementByPartialLink() {
+        WebElement work = driver.findElement(By.partialLinkText("work"));
+        System.out.println(work.getText());
+
+    }
+
+    @Test
+    public void findElementByCssSelector() {
+        //driver.findElement(By.tagName("h1"));
+        //tagName h1-> css "h1"
+        driver.findElement(By.cssSelector("h1"));
+
+        //driver.findElement(By.id("city"));
+        //id-> css #city
+        driver.findElement(By.cssSelector("#city"));
+
+        //driver.findElement(By.className("telephone"));
+        //class-> css .telephone
+
+
+        driver.findElement(By.cssSelector(".telephone"));
+        driver.findElement(By.cssSelector(".navigation-link"));
+
+        //contains ->*
+        driver.findElement(By.cssSelector("[class*='container']"));
+        //start-> ^
+        driver.findElement(By.cssSelector("[class^='input']"));
+        //end to -> $
+        driver.findElement(By.cssSelector("[class$='icon']"));
+
+        //[key='value']
+        driver.findElement(By.cssSelector("[placeholder='City']"));
+
+        //tag + class + class
+        driver.findElement(By.cssSelector("a.navigation-link.active"));
+
+        //one step above(один шаг вниз)
+        driver.findElement(By.cssSelector(".logo>img"));
+        //.feedback-card:nth-child(3)
+
+        //.feedback-card:nth-child(6) .feedback-text
+
+        //<tag> or <class> or <id>:nth-child(n)
+        WebElement feedback = driver.findElement(By.cssSelector(".feedback-card:nth-child(1)"));
+        System.out.println(feedback.getText());
+        WebElement search = driver.findElement(By.cssSelector(".navigation-link:nth-child(2)"));
+        System.out.println(search.getText());
+
+
+    }
+
+    @Test
+    public void findElementByxPath() {
+        // // tag[@atribute=‘value‘]
+        // //tag[1]
+        // //tag[text()'losa angeles']
+        driver.findElement(By.xpath("//h1"));
+
+        driver.findElement(By.xpath("//*[@id='city']"));
+
+        driver.findElement(By.xpath("//*[@class='telephone']"));
+
+        //driver.findElement(By.cssSelector("[class*='container']"));
+        driver.findElement(By.xpath("//*[contains(@class,'container')]"));
+        // driver.findElement(By.xpath("//p[contains(text(),'best services')]"));
+        driver.findElement(By.xpath("//p[contains(.,'best services')]"));
+        // driver.findElement(By.xpath("//*[text()='Find your car now!']"));
+        driver.findElement(By.xpath("//*[.='Find your car now!']"));
+
+        //driver.findElement(By.cssSelector(".logo>img"));
+        driver.findElement(By.xpath("//*[@class='logo']/img"));
+
+        //cssSelector - >   div>a         //cssSelector - >
+        //cssSelector - > div a           //cssSelector - >  //div//a
+
+
+    }
 }

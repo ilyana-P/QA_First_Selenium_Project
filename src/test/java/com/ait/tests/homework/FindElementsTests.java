@@ -46,7 +46,7 @@ public class FindElementsTests {
         driver.quit();
     }
     @Test
-    public void finElementByClassName(){
+    public void findElementByClassName(){
         WebElement button = driver.findElement(By.className("button-2"));
         System.out.println("Class button: " + button.getDomAttribute("class"));
 
@@ -75,4 +75,7 @@ public class FindElementsTests {
         System.out.println(password.getDomAttribute("name"));
 
     }
+
+
+
 }
