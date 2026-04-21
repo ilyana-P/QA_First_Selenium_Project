@@ -1,0 +1,7 @@
+921  [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  /Users/ilyana/Library/Caches/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+958  [main] INFO  com.ait.tests.homework.TestBase -- Start test createAccountPositiveTest with data: []
+9917 [main] INFO  com.ait.tests.homework.TestBase -- PASSED: createAccountPositiveTest
+9917 [main] INFO  com.ait.tests.homework.TestBase -- Stop test
+9918 [main] INFO  com.ait.tests.homework.TestBase -- **************************

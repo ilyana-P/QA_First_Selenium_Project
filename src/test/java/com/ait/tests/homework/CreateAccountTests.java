@@ -1,6 +1,7 @@
 package com.ait.tests.homework;
 
-import org.openqa.selenium.By;
+import com.ait.data.UserData;
+import com.ait.models.User;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -8,16 +9,14 @@ public class CreateAccountTests extends TestBase {
 
     @Test
     public void createAccountPositiveTest() {
-        String email = "testuser_" + System.currentTimeMillis() + "@test.com";
+        User user = new User()
+                .setFirstName("John")
+                .setLastName("Doe")
+                .setEmail("testuser_" + System.currentTimeMillis() + "@test.com")
+                .setPassword(UserData.PASSWORD);
 
-        click(By.cssSelector("a[href='/register']"));
-        type(By.cssSelector("#FirstName"), "John");
-        type(By.cssSelector("#LastName"), "Doe");
-        type(By.cssSelector("#Email"), email);
-        type(By.cssSelector("#Password"), "Test1234!");
-        type(By.cssSelector("#ConfirmPassword"), "Test1234!");
-        click(By.cssSelector("#register-button"));
+        app.getUser().register(user);
 
-        Assert.assertTrue(isElementPresent(By.cssSelector(".result")));
+        Assert.assertTrue(app.getUser().isRegistered());
     }
 }

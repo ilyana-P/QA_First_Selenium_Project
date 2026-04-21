@@ -1,0 +1,8 @@
+3846 [Test worker] INFO  com.ait.tests.homework.TestBase -- Start test createAccountPositiveTest with data: []
+8855 [Test worker] INFO  com.ait.tests.homework.TestBase -- PASSED: createAccountPositiveTest
+8856 [Test worker] INFO  com.ait.tests.homework.TestBase -- Stop test
+8857 [Test worker] INFO  com.ait.tests.homework.TestBase -- **************************
+8863 [Test worker] INFO  com.ait.tests.homework.TestBase -- Start test addItemToCartTest with data: []
+40798 [Test worker] INFO  com.ait.tests.homework.TestBase -- PASSED: addItemToCartTest
+40800 [Test worker] INFO  com.ait.tests.homework.TestBase -- Stop test
+40800 [Test worker] INFO  com.ait.tests.homework.TestBase -- **************************

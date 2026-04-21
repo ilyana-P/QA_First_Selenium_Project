@@ -1,0 +1,8 @@
+3163 [Test worker] INFO  com.ait.tests.homework.TestBase -- Start test createAccountPositiveTest with data: []
+7973 [Test worker] INFO  com.ait.tests.homework.TestBase -- PASSED: createAccountPositiveTest
+7975 [Test worker] INFO  com.ait.tests.homework.TestBase -- Stop test
+7975 [Test worker] INFO  com.ait.tests.homework.TestBase -- **************************
+7980 [Test worker] INFO  com.ait.tests.homework.TestBase -- Start test addItemToCartTest with data: []
+52700 [Test worker] ERROR com.ait.tests.homework.TestBase -- FAILED: addItemToCartTest. Screenshot: /Users/ilyana/Projects/QA_projects/QA_First_Selenium_Project/screenshots/screen-1776788553357.png
+52701 [Test worker] INFO  com.ait.tests.homework.TestBase -- Stop test
+52701 [Test worker] INFO  com.ait.tests.homework.TestBase -- **************************

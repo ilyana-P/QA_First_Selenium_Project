@@ -1,40 +1,49 @@
 package com.ait.tests.homework;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.ait.core.ApplicationManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-import java.time.Duration;
+import org.testng.annotations.BeforeSuite;
+
+import java.lang.reflect.Method;
+import java.util.Arrays;
 
 public class TestBase {
 
-    protected WebDriver driver;
+    protected static ApplicationManager app =
+            new ApplicationManager(System.getProperty("browser", "chrome"));
+
+    Logger logger = LoggerFactory.getLogger(TestBase.class);
+
+    @BeforeSuite
+    public void setUp() {
+        app.init();
+    }
+
+    @AfterSuite
+    public void tearDown() {
+        app.stop();
+    }
 
     @BeforeMethod
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.get("https://demowebshop.tricentis.com");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public void startTest(Method method, Object[] p) {
+        logger.info("Start test {} with data: {}", method.getName(), Arrays.asList(p));
     }
 
     @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
-
-    public void click(By locator) {
-        driver.findElement(locator).click();
-    }
-
-    public void type(By locator, String text) {
-        click(locator);
-        driver.findElement(locator).clear();
-        driver.findElement(locator).sendKeys(text);
-    }
-
-    public boolean isElementPresent(By locator) {
-        return !driver.findElements(locator).isEmpty();
+    public void stopTest(ITestResult result) {
+        if (result.isSuccess()) {
+            logger.info("PASSED: {}", result.getMethod().getMethodName());
+        } else {
+            logger.error("FAILED: {}. Screenshot: {}",
+                    result.getMethod().getMethodName(),
+                    app.getUser().takeScreenshot());
+        }
+        logger.info("Stop test");
+        logger.info("**************************");
     }
 }

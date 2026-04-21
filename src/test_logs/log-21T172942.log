@@ -1,0 +1,7 @@
+956  [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  /Users/ilyana/Library/Caches/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+1023 [main] INFO  com.ait.tests.homework.TestBase -- Start test addItemToCartTest with data: []
+16545 [main] ERROR com.ait.tests.homework.TestBase -- FAILED: addItemToCartTest
+16547 [main] INFO  com.ait.tests.homework.TestBase -- Stop test
+16548 [main] INFO  com.ait.tests.homework.TestBase -- **************************
