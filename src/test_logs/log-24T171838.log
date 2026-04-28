@@ -1,0 +1,9 @@
+660  [main] INFO  org.testng.internal.Utils -- [TestNG] Running:
+  /Users/ilyana/Library/Caches/JetBrains/IntelliJIdea2025.3/temp-testng-customsuite.xml
+
+1368 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+1380 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager -- Exporting webdriver.chrome.driver as /Users/ilyana/.cache/selenium/chromedriver/mac-arm64/147.0.7727.117/chromedriver
+5651 [main] INFO  com.ait.tests.homework.TestBase -- Start test addItemToCartTest with data: []
+23367 [main] INFO  com.ait.tests.homework.TestBase -- PASSED: addItemToCartTest
+23368 [main] INFO  com.ait.tests.homework.TestBase -- Stop test
+23368 [main] INFO  com.ait.tests.homework.TestBase -- **************************

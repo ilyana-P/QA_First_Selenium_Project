@@ -3,9 +3,18 @@ package com.ait.tests.homework;
 import com.ait.data.UserData;
 import com.ait.models.User;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class CreateAccountTests extends TestBase {
+
+    @BeforeMethod
+    public void ensurePrecondition() {
+        if (!app.getUser().isLoginLinkPresent()) {
+            app.getUser().clickOnSignOutLink();
+            app.getUser().pause(1000);
+        }
+    }
 
     @Test
     public void createAccountPositiveTest() {
@@ -15,7 +24,10 @@ public class CreateAccountTests extends TestBase {
                 .setEmail("testuser_" + System.currentTimeMillis() + "@test.com")
                 .setPassword(UserData.PASSWORD);
 
-        app.getUser().register(user);
+        app.getUser().clickOnRegisterLink();
+        app.getUser().pause(1000);
+        app.getUser().fillRegisterForm(user);
+        app.getUser().clickOnRegisterButton();
 
         Assert.assertTrue(app.getUser().isRegistered());
     }

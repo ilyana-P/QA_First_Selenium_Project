@@ -11,24 +11,42 @@ public class UserHelper extends BaseHelper {
         super(driver);
     }
 
-    public void login(User user) {
+
+    public void clickOnLoginLink() {
         click(By.cssSelector("a[href='/login']"));
-        pause(2000);
+    }
+
+    public void fillEmailPasswordForm(User user) {
         type(By.cssSelector("#Email"), user.getEmail());
         type(By.cssSelector("#Password"), user.getPassword());
-        click(By.cssSelector("input[value='Log in']"));
-        pause(2000);
     }
-    public void register(User user) {
+
+    public void clickOnLoginButton() {
+        click(By.cssSelector("input[value='Log in']"));
+    }
+
+
+    public void clickOnRegisterLink() {
         click(By.cssSelector("a[href='/register']"));
-        pause(2000);
+    }
+
+    public void fillRegisterForm(User user) {
         type(By.cssSelector("#FirstName"), user.getFirstName());
         type(By.cssSelector("#LastName"), user.getLastName());
         type(By.cssSelector("#Email"), user.getEmail());
         type(By.cssSelector("#Password"), user.getPassword());
         type(By.cssSelector("#ConfirmPassword"), user.getPassword());
+    }
+
+    public void clickOnRegisterButton() {
         click(By.cssSelector("#register-button"));
     }
+
+
+    public void clickOnSignOutLink() {
+        click(By.cssSelector("a[href='/logout']"));
+    }
+
 
     public boolean isLoggedIn() {
         return isElementPresent(By.cssSelector(".account"));
@@ -38,6 +56,7 @@ public class UserHelper extends BaseHelper {
         pause(2000);
         return isElementPresent(By.cssSelector(".result"));
     }
+
     public boolean isLoginLinkPresent() {
         return isElementPresent(By.cssSelector("a[href='/login']"));
     }

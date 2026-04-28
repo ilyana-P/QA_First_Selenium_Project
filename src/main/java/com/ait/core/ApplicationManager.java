@@ -1,10 +1,12 @@
 package com.ait.core;
 
+import com.ait.fw.ItemHelper;
 import com.ait.fw.UserHelper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
@@ -14,6 +16,8 @@ public class ApplicationManager {
     public WebDriver driver;
 
     private UserHelper user;
+    private ItemHelper item;
+    public static SoftAssert softAssert;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -35,6 +39,8 @@ public class ApplicationManager {
         driver.manage().window().maximize();
 
         user = new UserHelper(driver);
+        item = new ItemHelper(driver);
+        softAssert = new SoftAssert();
     }
 
     public void stop() {
@@ -44,4 +50,6 @@ public class ApplicationManager {
     public UserHelper getUser() {
         return user;
     }
+    public ItemHelper getItem() {
+        return item;}
 }
