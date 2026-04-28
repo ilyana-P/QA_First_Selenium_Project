@@ -60,4 +60,8 @@ public class UserHelper extends BaseHelper {
     public boolean isLoginLinkPresent() {
         return isElementPresent(By.cssSelector("a[href='/login']"));
     }
+
+    public boolean isErrorMessagePresent() {
+        return isElementPresent(By.cssSelector(".message-error"));
+    }
 }

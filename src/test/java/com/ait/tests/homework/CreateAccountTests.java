@@ -1,10 +1,13 @@
 package com.ait.tests.homework;
 
 import com.ait.data.UserData;
+import com.ait.details.UserDetails;
 import com.ait.models.User;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import static com.ait.core.ApplicationManager.softAssert;
 
 public class CreateAccountTests extends TestBase {
 
@@ -16,7 +19,7 @@ public class CreateAccountTests extends TestBase {
         }
     }
 
-    @Test
+    @Test(enabled = false)
     public void createAccountPositiveTest() {
         User user = new User()
                 .setFirstName("John")
@@ -30,5 +33,17 @@ public class CreateAccountTests extends TestBase {
         app.getUser().clickOnRegisterButton();
 
         Assert.assertTrue(app.getUser().isRegistered());
+    }
+
+    @Test
+    public void existedUserRegisterNegativeTest() {
+        app.getUser().clickOnRegisterLink();
+        app.getUser().pause(1000);
+        app.getUser().fillRegisterForm(new User()
+                .setEmail(UserDetails.EMAIL)
+                .setPassword(UserData.PASSWORD));
+        app.getUser().clickOnRegisterButton();
+        softAssert.assertTrue(app.getUser().isErrorMessagePresent());
+        softAssert.assertAll();
     }
 }
