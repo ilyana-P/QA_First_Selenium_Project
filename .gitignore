@@ -1,6 +1,7 @@
 .gradle
 /gradle/
-
+screenshots/
+src/test_logs/
 ### IntelliJ IDEA ###
 *.idea
 *.iws
