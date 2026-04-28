@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ait.tests.homework.ItemTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-21T16:35:13.978Z" hostname="MacBookAir" time="11.902">
+  <properties/>
+  <testcase name="addItemToCartTest" classname="com.ait.tests.homework.ItemTests" time="11.902"/>
+  <system-out><![CDATA[18:34:53.951 [Test worker] INFO  com.ait.tests.homework.TestBase -- Start test addItemToCartTest with data: []
+18:35:25.886 [Test worker] INFO  com.ait.tests.homework.TestBase -- PASSED: addItemToCartTest
+18:35:25.888 [Test worker] INFO  com.ait.tests.homework.TestBase -- Stop test
+18:35:25.888 [Test worker] INFO  com.ait.tests.homework.TestBase -- **************************
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

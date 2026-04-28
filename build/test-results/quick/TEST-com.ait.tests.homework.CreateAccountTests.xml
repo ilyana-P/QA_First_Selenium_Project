@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ait.tests.homework.CreateAccountTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-28T14:47:11.198Z" hostname="MacBookAir" time="4.997">
+  <properties/>
+  <testcase name="createAccountPositiveTest" classname="com.ait.tests.homework.CreateAccountTests" time="4.997"/>
+  <system-out><![CDATA[16:47:11.175 [Test worker] INFO  com.ait.tests.homework.TestBase -- Start test createAccountPositiveTest with data: []
+16:47:16.199 [Test worker] INFO  com.ait.tests.homework.TestBase -- PASSED: createAccountPositiveTest
+16:47:16.200 [Test worker] INFO  com.ait.tests.homework.TestBase -- Stop test
+16:47:16.200 [Test worker] INFO  com.ait.tests.homework.TestBase -- **************************
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

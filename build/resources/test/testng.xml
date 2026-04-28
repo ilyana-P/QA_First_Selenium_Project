@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Homework" verbose="1">
+    <test name="HomeworkTests">
+        <classes>
+            <class name="com.ait.tests.homework.CreateAccountTests"/>
+            <class name="com.ait.tests.homework.ItemTests"/>
+        </classes>
+    </test>
+</suite>
